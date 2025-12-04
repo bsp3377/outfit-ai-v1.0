@@ -1,40 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Outfit Studio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Outfit Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Global Animations */
+    @keyframes shimmer {
+      0% {
+        background-position: 200% 0;
       }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
+
+      100% {
+        background-position: -200% 0;
       }
-      h1, h2, h3, h4, h5, h6 {
-        font-family: 'Playfair Display', serif;
+    }
+
+    .animate-shimmer {
+      animation: shimmer 3s infinite linear;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
       }
-      
-      /* Global Animations */
-      @keyframes shimmer {
-        0% { background-position: 200% 0; }
-        100% { background-position: -200% 0; }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-      .animate-shimmer {
-        animation: shimmer 3s infinite linear;
-      }
-      @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
-      }
-      .animate-fadeIn {
-          animation: fadeIn 0.4s ease-out forwards;
-      }
-    </style>
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -52,10 +76,13 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
-  <body class="bg-stone-50 text-stone-900 dark:bg-stone-950 dark:text-stone-50 antialiased transition-colors duration-300">
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+
+<body
+  class="bg-stone-50 text-stone-900 dark:bg-stone-950 dark:text-stone-50 antialiased transition-colors duration-300">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>
